@@ -5,7 +5,7 @@ app.use(express.urlencoded({ extended: true }))
 
 const personData = [];
 
-// post apo
+// POST APT / CREATE
 app.post("/api/add_person", (req, res) => {
     console.log("Result", req.body)
     const pdata = {
@@ -27,6 +27,22 @@ app.post("/api/add_person", (req, res) => {
     )
 })
 
+
+//GET API / READ
+app.get("/api/get_person", (req, res) => {
+    console.log("Result", req.body)
+    if (personData.length > 0) {
+        res.status(200).send({
+            "status_code": 200,
+            "person": personData,
+        })
+    } else {
+        res.status(200).send({
+            "status_code": 404,
+            "person": [],
+        })
+    }
+})
 
 
 port = 3000

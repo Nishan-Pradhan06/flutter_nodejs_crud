@@ -16,21 +16,7 @@ class _ReadPageState extends State<ReadPage> {
           Container(
             decoration: BoxDecoration(color: Colors.deepPurple.shade100),
           ),
-          Container(
-            margin: const EdgeInsets.symmetric(vertical: 100, horizontal: 50),
-            child: Material(
-              elevation: 25,
-              borderRadius: BorderRadius.circular(30),
-              child: Container(
-                height: MediaQuery.of(context).size.height,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  color: Colors.deepPurple.shade200,
-                  borderRadius: BorderRadius.circular(30),
-                ),
-              ),
-            ),
-          ),
+          Container(child:FutureBuilder(future:fetchData() , builder: ) ),
           Container(
             margin: const EdgeInsets.only(bottom: 20),
             child: Center(
